@@ -1,0 +1,18 @@
+server:
+  port: 3001
+spring:
+  application:
+    name: spring-cloud-mall-order
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.1.6.200:1001/eureka/,http://10.1.8.37:1001/eureka/
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+      base-path: /

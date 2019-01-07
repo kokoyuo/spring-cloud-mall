@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: spring-cloud-mall-turbine
+server:
+  port: 4001
+turbine:
+  instanceUrlSuffix: hystrix.stream
+  app-config: spring-cloud-mall-order,spring-cloud-mall-user
+  aggregator:
+    cluster-config: default
+  cluster-name-expression: new String("default")
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.1.6.200:1001/eureka/,http://10.1.8.37:1001/eureka/

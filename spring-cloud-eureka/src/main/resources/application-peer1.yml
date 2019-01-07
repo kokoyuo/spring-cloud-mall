@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-cloud-mall-eureka
+server:
+  port: 1001
+eureka:
+  server:
+    enable-self-preservation: false
+  instance:
+    hostname: ${spring.cloud.client.ip-address}
+  client:
+    service-url:
+      defaultZone: http://10.1.6.200:1001/eureka/

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: spring-cloud-zuul-turbine
+server:
+  port: 5001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.1.6.200:1001/eureka/,http://10.1.8.37:1001/eureka/
+zuul:
+  routes:
+    order:
+      serviceId: spring-cloud-mall-order
+      path: /order/**
+    user:
+      serviceId: spring-cloud-mall-user
+      path: /user/**
